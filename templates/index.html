@@ -7,7 +7,7 @@
 body {
     margin:0;
     font-family: system-ui, Arial, sans-serif;
-    background:#020617;
+    background:#bdbec4;
     color:black;
     display:flex;
     justify-content:center;
@@ -27,23 +27,13 @@ h1{
     font-weight:600;
 }
 
-textarea{
-    width:80%;
-    min-height:60px;   /* small at start */
-    max-height:300px;
-    resize:none;
-    overflow:hidden;
-
-    background:white;
-    color:black;
-
-    border-radius:12px;
-    padding:12px;
-    font-size:18px;
-    border:2px solid #e5e7eb;
-    outline:none;
-
-    transition:0.2s ease;
+textarea {
+    background-color: #0c0b1a;  /* dark navy black */
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #1f2933;
+    outline: none;
 }
 
 textarea:focus{
@@ -97,7 +87,7 @@ function autoResize(el){
 </form>
 
 <div class="result">
-    {{ result }}
+
 </div>
 
 </div>
