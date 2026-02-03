@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Bot Detector</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #38bdf8;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 25px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🤖 AI Bot Detector</h1>
+
+<form method="POST">
+    <textarea name="text" placeholder="Paste your text here..."></textarea><br>
+    <button type="submit">Detect</button>
+</form>
+
+<div class="result">
+    {{ result }}
+</div>
+
+</body>
+</html>
