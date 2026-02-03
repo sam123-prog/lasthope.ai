@@ -20,7 +20,6 @@ def home():
             result = "Likely Human Written 👨"
 
     return render_template("index.html", result=result)
-
 import os
 
 if __name__ == "__main__":
