@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>AI Bot Detector</title>
 
 <style>
-body {
+body{
     margin:0;
     font-family: system-ui, Arial, sans-serif;
-    background:#bdbec4;
-    color:black;
+    background:linear-gradient(135deg,#0f172a,#020617);
+    color:white;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -17,58 +18,85 @@ body {
 
 .container{
     width:90%;
-    max-width:700px;
+    max-width:800px;
     text-align:center;
 }
 
 h1{
-    font-size:34px;
+    font-size:36px;
+    font-weight:700;
     margin-bottom:30px;
-    font-weight:600;
+    letter-spacing:1px;
 }
 
-textarea {
-    background-color: #0c0b1a;  /* dark navy black */
-    color: #ffffff;
-    border-radius: 12px;
-    padding: 15px;
-    border: 1px solid #1f2933;
-    outline: none;
+/* TEXT BOX */
+
+textarea{
+    width:100%;
+    min-height:70px;
+    max-height:350px;
+    resize:none;
+    overflow:hidden;
+
+    background:white;
+    color:black;
+
+    border-radius:14px;
+    padding:16px;
+    font-size:18px;
+    border:2px solid #e5e7eb;
+    outline:none;
+
+    transition:0.2s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 textarea:focus{
     border-color:#38bdf8;
 }
 
+/* BUTTON */
+
 button{
-    margin-top:18px;
-    padding:12px 26px;
-    font-size:16px;
+    margin-top:20px;
+    padding:14px 32px;
+    font-size:18px;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     background:#38bdf8;
     color:black;
     cursor:pointer;
-    transition:0.2s;
+    font-weight:600;
+    transition:0.2s ease;
 }
 
 button:hover{
+    transform:scale(1.05);
     background:#0ea5e9;
 }
 
+/* RESULT */
+
 .result{
-    margin-top:25px;
-    font-size:22px;
+    margin-top:30px;
+    font-size:24px;
+    font-weight:600;
     color:#e5e7eb;
+}
+
+/* SMALL SCREEN */
+
+@media(max-width:600px){
+    h1{
+        font-size:28px;
+    }
+    textarea{
+        font-size:16px;
+    }
 }
 </style>
 </head>
-<script>
-function autoResize(el){
-    el.style.height = "auto";
-    el.style.height = el.scrollHeight + "px";
-}
-</script>
+
 <body>
 
 <div class="container">
@@ -76,21 +104,32 @@ function autoResize(el){
 <h1>LAST HOPE OF HUMANITY</h1>
 
 <form method="POST">
-    <textarea 
+
+<textarea 
     id="textInput"
-    name="text" 
+    name="text"
     placeholder="Paste or type your text here..."
     oninput="autoResize(this)"
     required></textarea>
-    <br>
-    <button type="submit">Check</button>
+
+<br>
+
+<button type="submit">Check</button>
+
 </form>
 
 <div class="result">
-
+    {{ result }}
 </div>
 
 </div>
+
+<script>
+function autoResize(el){
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+}
+</script>
 
 </body>
 </html>
